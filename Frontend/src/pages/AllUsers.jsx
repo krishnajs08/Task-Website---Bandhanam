@@ -1,9 +1,8 @@
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import './allUser.css';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;  
 
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
@@ -11,21 +10,18 @@ const AllUsers = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      try {
-        const res = await axios.get(BACKEND_URL, { params: filter });
-        setUsers(res.data);
-      } catch (err) {
-        console.error("Error fetching users:", err);
-      }
+      const res = await axios.get("https://task-website-bandhanam.vercel.app/api/users", { params: filter });
+      setUsers(res.data);
     };
     fetchUsers();
   }, [filter]);
 
   return (
     <div className="all">
-      <div id="heading">
-        <h3>Search The Profile... :)</h3>
-      </div>
+        <div id="heading">
+          <h3>Search The Profile... :)</h3>
+        </div>
+      
       <br />
 
       <div className="filters">
@@ -45,6 +41,7 @@ const AllUsers = () => {
       <div className="users-grid">
         {users.map(user => (
           <Link to={`/users/${user._id}`} key={user._id}>
+          
             <div className="user-card">
               {user.name} - {user.gender}
             </div>

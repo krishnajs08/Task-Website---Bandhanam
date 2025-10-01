@@ -15,6 +15,13 @@ app.use(express.json());
 
 app.use("/api/users", userRoutes);
 
+app.get('/',(res,req) =>{
+  res.send({
+    asctiveStatus:true,
+    error:false,
+  })
+})
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

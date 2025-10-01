@@ -9,12 +9,17 @@ const AllUsers = () => {
   const [filter, setFilter] = useState({ name: "", gender: "" });
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      const res = await axios.get("https://task-website-bandhanam.vercel.app/api/users", { params: filter });
+  const fetchUsers = async () => {
+    try {
+      const res = await axios.get("https://task-website-bandhanam.vercel.app/api/users");
       setUsers(res.data);
-    };
-    fetchUsers();
-  }, [filter]);
+    } catch (err) {
+      console.error("Error fetching users:", err);
+    }
+  };
+  fetchUsers();
+}, []);
+
 
   return (
     <div className="all">

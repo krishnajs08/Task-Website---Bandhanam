@@ -9,12 +9,17 @@ const AllUsers = () => {
   const [filter, setFilter] = useState({ name: "", gender: "" });
 
   useEffect(() => {
-    const fetchUsers = async () => {
+  const fetchUsers = async () => {
+    try {
       const res = await axios.get("http://localhost:5000/api/users", { params: filter });
       setUsers(res.data);
-    };
-    fetchUsers();
-  }, [filter]);
+    } catch (err) {
+      console.error("Error fetching users:", err);
+    }
+  };
+  fetchUsers();
+}, []);
+
 
   return (
     <div className="all">

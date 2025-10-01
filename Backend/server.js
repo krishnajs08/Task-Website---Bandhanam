@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use("/api/users", userRoutes);
 
-app.get('/',(res,req) =>{
+app.get('/',(req,res) =>{
   res.send({
     asctiveStatus:true,
     error:false,

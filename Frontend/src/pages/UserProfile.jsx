@@ -12,7 +12,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`http://localhost:5000/api/users/${id}`);
+      const res = await axios.get(`https://task-website-bandhanam.vercel.app/api/users/${id}`);
       setUser(res.data);
     };
     fetchUser();

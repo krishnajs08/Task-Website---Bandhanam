@@ -11,7 +11,7 @@ const AllUsers = () => {
   useEffect(() => {
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("https://task-website-bandhanam.vercel.app/api/users");
+      const res = await axios.get("http://localhost:5000/api/users", { params: filter });
       setUsers(res.data);
     } catch (err) {
       console.error("Error fetching users:", err);

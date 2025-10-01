@@ -1,0 +1,97 @@
+
+*{
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+.page{
+  height: 100vh;
+}
+.home {
+  text-align: center;
+  padding: 50px 20px;
+  width: 100%;   
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background: url(../assets/back.webp) no-repeat center top;
+  background-size: cover !important; 
+  background-position: center;
+}
+
+.home h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.home p {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: white;
+}
+.home-content {
+  margin-top: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centers it */
+  text-align:center;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  background-color:#04e7d1 ;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 10px;
+  border:2px solid rgb(11, 236, 224) ;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #40ffec;
+  color: rgb(72, 72, 72);
+}
+
+.btn-outline {
+  background: white;
+  color: #ff6f61;
+  border: 2px solid #ff6f61;
+}
+
+.btn-outline:hover {
+  background: #ff6f61;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  .home h1 {
+    font-size: 2rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+  }
+}

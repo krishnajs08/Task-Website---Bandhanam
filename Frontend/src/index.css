@@ -1,0 +1,44 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 0;
+}
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav div h3 {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .users-grid {
+    grid-template-columns: 1fr;
+  }
+}

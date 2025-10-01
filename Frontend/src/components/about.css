@@ -1,0 +1,24 @@
+.about-section {
+    background-color: #b4b4b4; 
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.about-section p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px auto; 
+}
+
+.about-section p:last-child {
+    margin-bottom: 0; 
+}
